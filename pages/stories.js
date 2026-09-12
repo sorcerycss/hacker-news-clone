@@ -1,3 +1,4 @@
+import Story from '../components/Story.js';
 import view from '../utils/view.js';
 
 // Renders the stories view for a given route
@@ -7,7 +8,7 @@ export default async function Stories(path) {
 
     // Temporary rendering — just stringifying story objects for now
     view.innerHTML = `<div>
-        ${hasStories ? stories.map(story => JSON.stringify(story)) : 'No stories'}
+        ${hasStories ? stories.map((story, i) => Story({ ...story, index: i + 1 })).join('') : 'No stories'}
     </div>`;
 }
 
