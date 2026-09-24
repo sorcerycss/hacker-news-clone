@@ -7,7 +7,6 @@ import store from '../store.js';
 // Renders the stories view for a given route
 export default async function Stories(path) {
     const { favorites } = store.getState();
-    console.log(favorites);
     const stories = await getStories(path);
     const hasStories = stories.length > 0;
 
